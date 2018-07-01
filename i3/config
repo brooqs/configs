@@ -50,10 +50,10 @@ bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
+#bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Right focus right
 
 # move focused window
 #bindsym $mod+Shift+j move left
@@ -217,7 +217,8 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
 
 bindsym $mod+d exec rofi -show run -lines "3" -font "System San Francisco Display Regular 10"
 
@@ -225,13 +226,13 @@ for_window [class="Firefox"] move container to workspace $ws1
 for_window [class="Xfce4-terminal"] move container to workspace $ws2
 for_window [class="Atom"] move container to workspace $ws3
 for_window [class="Spotify"] move container to workspace $ws4
-for_window [class="Franz"] move container to workspace $ws5
+for_window [class="Midori"] move container to workspace $ws5
 
 exec_always feh --bg-fill /home/brooqs/.config/i3/wallpaper.png
-exec_always compton
+exec_always compton -c
 exec --no-startup-id firefox
 exec --no-startup-id xfce4-terminal
 exec --no-startup-id atom
 exec --no-startup-id spotify
-exec --no-startup-id franz
+exec --no-startup-id Midori
 exec albert
